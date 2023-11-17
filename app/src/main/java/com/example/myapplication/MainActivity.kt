@@ -13,11 +13,20 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val playButton = findViewById<View>(R.id.cry)
+        val cryButton = findViewById<View>(R.id.cry)
+        val damageButton = findViewById<View>(R.id.damage)
 
-        playButton.setOnClickListener {
+
+        cryButton.setOnClickListener {
             // Загрузить MP3 файл
             mediaPlayer = MediaPlayer.create(this, R.raw.cry)
+
+            // Запустить воспроизведение
+            mediaPlayer.start()
+        }
+        damageButton.setOnClickListener {
+            // Загрузить MP3 файл
+            mediaPlayer = MediaPlayer.create(this, R.raw.damage)
 
             // Запустить воспроизведение
             mediaPlayer.start()
